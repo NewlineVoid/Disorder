@@ -1,0 +1,53 @@
+#vc-spotify-player{
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+#vc-spotify-player > * {
+    z-index: 1;
+}
+#vc-spotify-player::after{
+    content: "";
+    height: 160%;
+    width: 100%;
+    display:block;
+    position: absolute;
+    top:0;
+    left:0;
+    background: rgb(var(--disorder-colors-primary-1000));
+    background-image:var(--vc-spotify-track-image);
+    background-position: center;
+    background-size: 125%;
+    background-repeat: repeat;
+    z-index:-1;
+    filter: brightness(10%) blur(10px);
+    transition: var(--disorder-transition-long);
+}
+#vc-spotify-player:hover::after{
+    filter: brightness(45%) blur(2.5px);
+    background-size: 95%;
+}
+#vc-spotify-album-image{
+    display:none;
+}
+#vc-spotify-progress-bar > [class^="sliderContainer_"] > div > [class^="bar_"] > div {
+    background:rgb(var(--disorder-colors-primary-100));
+}
+  
+[class^="panels_"] > [class^="container_"] {
+    background: rgb(var(--disorder-colors-primary-1000));
+    background: linear-gradient(0deg, rgba(0,0,0,0.7539390756302521) 45%, rgba(0,0,0,0.6502976190476191) 62%, rgba(0,0,0,0.3) 90%, rgba(0,0,0,0) 100%);
+    z-index: 1;
+}
+[class^="sidebar_"]>[class^="panels_"] {
+    overflow:hidden;
+    background:transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+[class^="sidebar_"]>[class^="panels_"]>[class^="container_"] {
+    margin:5px;
+    border-radius: 10px;
+    backdrop-filter: blur(500px);
+    position: relative;
+}

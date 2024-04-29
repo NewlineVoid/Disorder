@@ -1,0 +1,25 @@
+[class^="newMessagesBar_"], [class^="jumpToPresentBar_"] {
+    background: rgba(var(--disorder-colors-accent-new-100), 0.25);
+    border: 1px solid rgb(var(--disorder-colors-accent-new-300));
+    transform: translateY(calc(var(--disorder-message-present-spacing)*-1));
+    backdrop-filter: blur(5px);
+    transition: var(--disorder-transition-short);
+    height:var(--disorder-message-present-height);
+}
+[class^="newMessagesBar_"]:hover, [class^="jumpToPresentBar_"]:hover {
+    background: rgba(var(--disorder-colors-accent-new-100), 0.7);
+    transform: translateY(0);
+}
+[class^="newMessagesBar_"]>*, [class^="jumpToPresentBar_"]>*{
+    color: rgb(var(--disorder-colors-accent-new-500));
+    opacity: 1;
+}
+  
+[class^="jumpToPresentBar_"] {
+      transform: translateY(var(--disorder-message-present-spacing));
+}
+  
+[class^="imageWrapper_"] img[class^="lazyImg"] {
+    object-fit: contain !important;
+}
+  

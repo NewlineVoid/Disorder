@@ -1,0 +1,39 @@
+:root{
+    --disorder-colors-primary-100: 248, 249, 250;
+    --disorder-colors-primary-200: 241, 243, 245;
+    --disorder-colors-primary-300: 233, 236, 238;
+    --disorder-colors-primary-400: 222, 226, 230;
+    --disorder-colors-primary-500: 207, 212, 218;
+    --disorder-colors-primary-600: 173, 181, 189;
+    --disorder-colors-primary-700: 134, 142, 150;
+    --disorder-colors-primary-800: 73, 80, 87;
+    --disorder-colors-primary-900: 52, 58, 64;
+    --disorder-colors-primary-1000: #33, 37, 42;
+    --disorder-colors-accent-new-100: 204,236,255;
+    --disorder-colors-accent-new-200: 129, 226, 255;
+    --disorder-colors-accent-new-300: 95, 183, 255;
+    --disorder-colors-accent-new-400: 57, 87, 255;
+    --disorder-colors-accent-new-500: 1, 27, 146;
+    --disorder-colors-accent-danger-100: 255, 141, 141;
+    --disorder-colors-accent-danger-200: 255, 92, 92;
+    --disorder-colors-accent-danger-300: 255, 54, 54;
+    --disorder-colors-accent-danger-400: 222, 22, 22;
+    --disorder-colors-accent-danger-500: 86, 0, 0;
+    --disorder-colors-accent-warning-100: 253, 255, 140;
+    --disorder-colors-accent-warning-200: 252, 235, 84;
+    --disorder-colors-accent-warning-300: 255, 242, 58;
+    --disorder-colors-accent-warning-400: 255, 247, 13;
+    --disorder-colors-accent-warning-500: 71, 55, 0;
+    --disorder-colors-accent-success-100: 173, 255, 140;
+    --disorder-colors-accent-success-200: 118, 255, 72;
+    --disorder-colors-accent-success-300: 72, 255, 44;
+    --disorder-colors-accent-success-400: 59, 202, 3;
+    --disorder-colors-accent-success-500: 18, 91, 0;
+
+    --disorder-transition-short: ease-in 150ms;
+    --disorder-transition-medium: ease-in 450ms;
+    --disorder-transition-long: ease-in 750ms;
+
+    --disorder-message-present-spacing: 22.5px;
+    --disorder-message-present-height: 27.5px;
+}
