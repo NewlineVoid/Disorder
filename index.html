@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></Vathos> => { Disorder }</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="webAssets/prism/prism.css" data-noprefix />
+    <script src="webAssets/prism/prism.js"></script>
+</head>
+<body>  
+    <h1 class="header">Disorder<sub>.css</sub></h1>
+    <p>A <span id="Disorder-Discord">Disorder</span><span id="Discord-Disorder">(Discord)</span> CSS that <i>*totally*</i> doesn't increase your ram and make make you lag.</p>
+    <hr>
+    <section id="section-About">
+        <h2>About DisorderCSS</h2>
+        <p>
+            Disorder CSS is a set of CSS files that can be configured by the user in order to get the best(and most laggy) experience of Discord.<br>Why is it called Disorder? Because Discord users have a mental disorder, just like me :D
+            <br>Anyways..<br>DisorderCSS provides you with two types of CSS.
+            <ol>
+                <li>The main CSS, which has core variables and default themes.</li>
+                <li>Module CSS, which each contain their own features.</li>
+            </ol>
+            <br>If you can't figure it out already, The main CSS file is the most essential part of DisorderCSS.<br>Whereas, Modules are optional CSS files that you can import for specific features.
+            <br><b>This page allows you to select which modules you would like to import, and generates a CSS Snippet or a JS Snippet for you.</b>
+        </p>
+    </section>
+    <hr>
+    <section id="section-modules">
+        <h2>Modules</h2>
+        <p>
+            Interested in Modules? Well, look no further, you can find information about each module in the following parts.
+            <h3>About Modules</h3>
+            <p>
+                Modules are optional extensions that the user can import into their client in order to enhance specific parts of the UI or Theme.
+                <br>You may make a pull request to request a module, or make your own module. You may DM <a href="https://discordapp.com/users/697729838517190686">@newline.proj</a> on Discord for assistance, though I do plan on making a bit of documentation in the future, <i>not that it's actually needed since it's just CSS Variables</i>.
+                <br>
+            </p>
+            <div id="moduleList">
+                
+                
+                <template id="moduleTemplate">
+                    <hr>
+                    <div class="moduleListItem">
+                        <br><h4 class="moduleName" data-name><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div></h4>
+                        <span class="material-symbols-outlined moduleExpand skeleton">expand_more</span>
+                        <span class="material-symbols-outlined moduleExtend skeleton">extension</span>
+                        <br><span class="moduleDesc" data-desc><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div></span> 
+                        <br><span class="moduleVer" data-ver><div class="skeleton skeleton-text"></div></span>
+                        <br><span class="moduleDev" data-devs><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div><div class="skeleton skeleton-text"></div></span>
+                        <br><span data-img></span>
+                        <br>
+                    </div>
+                </template>
+            </div>
+        </p>
+    </section>
+    <hr>
+    <section id="section-generator">
+        <h2>Generator</h2>
+        <p>
+            Found one or more modules that you're interested in? You can click the "extension" icon located in the right of modules that are expanded.
+            <br>Once you've selected which modules you want, you can click <span id="generatorBudgetButton">here</span> to generate the <span id="CssOrJs">CSS</span> snippet.
+            <br><span id="SelectedSnippets">You've yet to select any module.</span>
+            <textarea readonly name="Snippet" id="Snippet" class="SnippetArea">
+/* Disorder.CSS */
+@import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/main.css');
+</textarea>
+<br> <span class="SnippetLanguage">CSS</span> <button class="SnippetButtons" onclick="SnippetButtons('select')">Select</button><button class="SnippetButtons" onclick="SnippetButtons('copy')">Copy</button><button class="SnippetButtons" onclick="SnippetButtons('download')">Download</button>
+     </p>
+    </section>
+    <hr>
+    <span>unprofessionally made by someone who can't CSS</span>
+</body>
+</html>
+<style>
+.SnippetLanguage{
+    position: absolute;
+    left: 10%;
+    border: none;
+    border-radius: 10px;
+    background: rgb(var(--disorder-colors-primary-700));
+    color: rgb(var(--disorder-colors-primary-100));
+    font-size: 1.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+button, a{
+    text-shadow: 0 0 1px rgb(var(--disorder-colors-primary-100));
+}
+button:hover, a:hover{
+    text-shadow: 0 0 5px rgb(var(--disorder-colors-primary-100));
+}
+button:hover{
+    box-shadow: 0 0 5px rgb(var(--disorder-colors-primary-100));
+}
+.SnippetButtons{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    border: 1px solid rgb(var(--disorder-colors-primary-700));
+    border-radius: 10px;
+    background: rgb(var(--disorder-colors-primary-800));
+    color: rgb(var(--disorder-colors-primary-100));
+    font-size: 1.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    cursor: pointer;
+}
+#Snippet{
+    background-color: rgb(var(--disorder-colors-primary-800));
+    color:rgb(var(--disorder-colors-primary-100));
+    resize:none;
+    position: relative;
+    width: 95%;
+    height: 20rem;
+    border: 1px solid rgb(var(--disorder-colors-primary-700));
+    border-radius: 10px;
+    text-align: left;
+}
+#generatorBudgetButton, #CssOrJs{
+    cursor: pointer;
+    text-decoration: underline;
+    color:rgb(var(--disorder-colors-primary-600));
+}
+#generatorBudgetButton:hover, #CssOrJs:hover{
+    color:rgb(var(--disorder-colors-primary-300));
+}
+.skeleton{
+    opacity: 0.7;
+    animation: skele 1s linear infinite alternate;
+    background-color: rgb(var(--disorder-colors-primary-500));
+}
+.skeleton-text{
+    display:inline-block;
+    width: 70%;
+    height: 0.85rem;
+    margin-bottom: 0.25rem;
+    border-radius: 5px;
+}
+.skeleton-text:last-child{
+    margin-bottom: 0;
+    width:60%;
+}
+@keyframes skele{
+    0%{
+        background-color: rgb(var(--disorder-colors-primary-600)) !important;
+        color: rgb(var(--disorder-colors-primary-600)) !important;
+    }
+    100%{
+        background-color: rgb(var(--disorder-colors-primary-400)) !important;
+        color: rgb(var(--disorder-colors-primary-400)) !important;
+    }
+}
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding:0;
+    margin:0;
+    text-align: center;
+}
+body{
+    margin: 1.5rem; 
+    background: rgb(var(--disorder-colors-primary-1000));
+    color: rgb(var(--disorder-colors-primary-100));
+}
+.header{
+    font-size: 3.5rem;
+    position: relative;
+    display:inline;
+}
+.header::before{
+    content: "";
+    position: absolute;
+    background:rgb(var(--disorder-colors-primary-100));
+    left: 40%;
+    right: 60%;
+    bottom:20%;
+    height:4px;
+    transition: var(--disorder-transition-medium);
+    transition-delay: 1s;
+}
+.header:hover::before{
+    left: 0;
+    right: 30%;
+    height:4px;
+    transition: var(--disorder-transition-short);
+    transition-delay: 150ms;
+}
+hr {
+  border-top: 1px solid #bbb;
+  margin: 1.25rem; 
+  border-radius: 5px;
+}
+i{
+    color: rgb(var(--disorder-colors-primary-600));
+}
+i:hover{
+    color: rgb(var(--disorder-colors-primary-500));
+}
+section>div{
+    margin:1rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+section p{
+    margin-left: 2.5rem;
+    margin-right: 2.5rem; 
+}
+section{
+    padding: 15px;
+    background: rgb(var(--disorder-colors-primary-900));
+    border-radius: 10px;
+    overflow: hidden;
+}
+li{
+    position:relative;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+}
+li::marker{
+    font-size: 1.5rem;
+    color: rgb(var(--disorder-colors-primary-400));
+}
+a{
+    color: rgb(var(--disorder-colors-primary-100));
+    text-decoration:underline solid rgb(var(--disorder-colors-primary-300));
+}
+a:visited{
+    text-decoration:underline solid rgb(var(--disorder-colors-primary-500));
+}
+#Discord-Disorder{
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-70px) translateY(0px);
+    transition-delay: 150ms;
+    pointer-events: none;
+}
+#Disorder-Discord:hover ~ #Discord-Disorder{
+    opacity: 1;
+    transform: translateX(-70px) translateY(-20px);
+    transition-delay: 750ms;
+}
+.moduleListItem{
+    background:rgb(var(--disorder-colors-primary-800));
+    border-radius: 15px;
+    position: relative;
+}
+.moduleListItem:not(.active) *:not(.moduleName):not(.moduleDesc):not(.moduleExpand){
+    display:none;
+}
+.moduleExpand, .moduleExtend{
+    position:absolute;
+    right: -3.75%;
+    font-size: 2.5rem;
+    width: 2.5rem;
+    height:2.5rem;
+    cursor:pointer;
+    background: rgba(var(--disorder-colors-primary-700), 0.25);
+    border-radius: 50%;
+}
+.moduleExpand:hover, .moduleExtend:hover{
+    background: rgba(var(--disorder-colors-primary-700), 0.5);
+}
+.moduleExpand{
+    top:10%;
+}
+.moduleExtend{
+    top:20%
+}
+img{
+    max-width: 40%;
+    min-width: 10%;
+    max-height: 40%;
+    min-height:10%;
+    border-radius:15px;
+    margin: 0.75rem;
+    object-fit: cover;
+}
+::-webkit-scrollbar{
+    background: rgb(var(--disorder-colors-primary-1000));
+    width: 0.25rem;
+}
+::-webkit-scrollbar-thumb{
+    background: rgb(var(--disorder-colors-primary-100));
+    border-radius: 15px;
+}
+</style>
+<script>
+const moduleList = document.querySelector('#moduleList')
+const moduleTemplate = document.querySelector('#moduleTemplate')
+let Modules = [{
+    name: 'betterSpotifyPlayer',
+    description: 'Stylizes your spotify player via blur.',
+    version: '1.1.0',
+    lastUpdated: getTime('2024/4/29 18:20'),
+    examples: ['https://picsum.photos/200/300', 'https://picsum.photos/100/200', 'https://picsum.photos/200/100', 'https://picsum.photos/300/200', 'https://picsum.photos/300/100'/*insert image urls here*/],
+    contributors: [
+        {githubUser: 'NewlineVoid', discordUser: 'newline.proj', role: 'developer'}
+    ]
+}, {
+    name: 'others',
+    description: 'Adds small changes to the theme.',
+    version: '1.0.1',
+    lastUpdated: getTime('2024/4/29 18:10'),
+    examples: ['https://picsum.photos/200/300', 'https://picsum.photos/100/200', 'https://picsum.photos/200/100', 'https://picsum.photos/300/200', 'https://picsum.photos/300/100'/*insert image urls here*/],
+    contributors: [
+        {githubUser: 'NewlineVoid', discordUser: 'newline.proj', role: 'developer'}
+    ]
+} ]
+let method = 'css';
+let selectedModules = []
+function getTime(dateString) {
+    let time;
+    if (!dateString) time = new Date();
+    else time = new Date(dateString);
+    return time.getTime();
+}
+for (let i = 0; i < 10; i++) {
+    moduleList.append(moduleTemplate.content.cloneNode(true))
+}
+window.addEventListener('load', ()=>{
+    moduleList.innerHTML="";
+    
+    Modules.forEach(module=>{
+        const div = moduleTemplate.content.cloneNode(true)
+        let contributors, examples = "";
+        contributors = "Made by ";
+        module.contributors.forEach(contributor=>{
+            if (contributor.role) {
+                if (contributor.githubUser) { contributors += `github@${contributor.githubUser}(${contributor.role}), `; return; }
+                else if (contributor.discordUser) { contributors += `discord@${contributor.discordUser}(${contributor.role}), `; return; }
+                else throw new Error(`Module '${module}' error: Contributor role specified, however no username received.`)
+            }  else {
+                if (contributor.githubUser) { contributors += `github@${contributor.githubUser}(developer), `; return; }
+                else if (contributor.discordUser) { contributors += `discord@${contributor.discordUser}(developer), `; return; }
+                else throw new Error(`Module '${module}' error: No username or role received.`)
+            }
+            throw new Error(`Module '${module}' error: An error occured while retrieving contributors.`)
+        })
+        contributors = contributors.substring(0, (contributors.length-2))
+        module.examples.forEach(example=>{
+            examples +=`<img class="skeleton" src="${example}" alt="an example of the ${module.name} module." width="300px" height="200px">`
+        })
+        div.querySelector('.moduleListItem').id = module.name;
+        div.querySelector('[data-name]').textContent = module.name;
+        div.querySelector('[data-desc]').textContent = module.description;
+        div.querySelector('[data-ver]').textContent = `v${module.version}, last updated on ${new Date(module.lastUpdated).toLocaleString()}`;
+        div.querySelector('[data-devs]').textContent = contributors;
+        div.querySelector('[data-img]').innerHTML = examples;
+        div.querySelector('.moduleExpand').addEventListener('click', ()=>{
+            document.querySelector(`#${module.name}`).classList.toggle('active');
+            if (document.querySelector(`#${module.name}`).classList.contains('active')) {
+                document.querySelector(`#${module.name} > .moduleExpand`).innerText = 'expand_less'
+            } else {
+                document.querySelector(`#${module.name} > .moduleExpand`).innerText = 'expand_more'
+            }
+        })
+        div.querySelector('.moduleExtend').addEventListener('click', ()=>{
+            if (selectedModules.indexOf(module.name) === -1) {
+                selectedModules.push(module.name);
+                document.querySelector(`#${module.name} > .moduleExtend`).innerText = 'extension_off';
+            } else {
+                selectedModules.splice(selectedModules.indexOf(module.name), 1);
+                document.querySelector(`#${module.name} > .moduleExtend`).innerText = 'extension';
+            }   
+        })
+        moduleList.append(div)
+    })
+    function sleep(time) { return new Promise(resolve=>{setTimeout(resolve, time)})}
+    sleep(2000).then(()=>{
+        let skele = document.querySelectorAll('.skeleton')
+        skele.forEach(el=>{
+            el.classList.remove('skeleton')
+            if (el.classList.contains('skeleton-text')) el.classList.remove('skeleton-text')
+        })
+    })
+})
+document.querySelector('#CssOrJs').addEventListener('click', ()=>{
+    if (method.toLowerCase() == 'css') {
+        method = 'js'
+    } else {
+        method = 'css'
+    }
+    document.querySelector('#CssOrJs').innerText = method.toUpperCase();
+    document.querySelector('.SnippetLanguage').innerText = method.toUpperCase();
+
+    if (method.toLowerCase() == 'css') {
+        document.querySelector('#Snippet').innerHTML = generateCSSSnippet();
+    } else if (method.toLowerCase() == 'js') {
+        document.querySelector('#Snippet').innerHTML = generateJSSnippet();
+    }
+})
+function generateCSSSnippet() {
+    let snippet = `/* Disorder.CSS */
+@import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/main.css');`;
+
+    selectedModules.forEach(module => {
+        const foundModule = Modules.find(mod => mod.name === module);
+        if (foundModule) {
+            let contributors = "";
+            foundModule.contributors.forEach(contributor => {
+                if (contributor.role) {
+                    if (contributor.githubUser) { contributors += `github@${contributor.githubUser}(${contributor.role}), `; return; }
+                    else if (contributor.discordUser) { contributors += `discord@${contributor.discordUser}(${contributor.role}), `; return; }
+                    else throw new Error(`Module '${module}' error: Contributor role specified, however no username received.`);
+                } else {
+                    if (contributor.githubUser) { contributors += `github@${contributor.githubUser}(developer), `; return; }
+                    else if (contributor.discordUser) { contributors += `discord@${contributor.discordUser}(developer), `; return; }
+                    else throw new Error(`Module '${module}' error: No username or role received.`);
+                }
+                throw new Error(`Module '${module}' error: An error occurred while retrieving contributors.`);
+            });
+            contributors = contributors.substring(0, (contributors.length - 2));
+            snippet += `\n/* ${module}: ${contributors} */\n@import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/modules/${module}.css');`;
+        }
+    });
+    return snippet;
+}
+function generateJSSnippet(){
+    return `// This will import DisorderCSS into your QuickCSS by pasting this into your console. This DOES NOT remove other QuickCSS, however, issues may occur.
+// Known issues: having your quickCSS editor open whilst using this will not work. 
+VencordNative.quickCss.get().then(existing => VencordNative.quickCss.set(\`${generateCSSSnippet()}\` + "\\n" + existing));\n`;
+}
+document.querySelector('#generatorBudgetButton').addEventListener('click', ()=>{
+    if (method.toLowerCase() == 'css') {
+        document.querySelector('#Snippet').innerHTML = generateCSSSnippet();
+    } else if (method.toLowerCase() == 'js') {
+        document.querySelector('#Snippet').innerHTML = generateJSSnippet();
+    }
+});
+function SnippetButtons(type) {
+    if (type == 'select') {
+        document.querySelector('#Snippet').select();
+    } else if (type == 'copy') {
+        navigator.clipboard.writeText(document.querySelector('#Snippet').innerHTML);
+    } else if (type == 'download') {
+        var el = document.createElement('a');
+        el.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.getElementById('Snippet').innerHTML));
+        el.setAttribute('download', `disorder.${method.toLowerCase()}`);
+        el.style.display = 'none';
+        document.body.appendChild(el);
+        el.click();
+        document.body.removeChild(el);
+    } else throw new Error('unknown snippet type')
+}
+</script>
