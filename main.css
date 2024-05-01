@@ -37,6 +37,3 @@
     --disorder-message-present-spacing: 22.5px;
     --disorder-message-present-height: 27.5px;
 }
-*{
-    transition: var(--disorder-transition-short);
-}
