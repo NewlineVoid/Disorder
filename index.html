@@ -293,7 +293,7 @@ img{
 const moduleList = document.querySelector('#moduleList')
 const moduleTemplate = document.querySelector('#moduleTemplate')
 let Modules = [{
-    name: 'betterSpotifyPlayer',
+    name: 'betterUserPanel',
     description: 'Stylizes your spotify player via blur.',
     version: '1.1.0',
     lastUpdated: getTime('2024/4/29 18:20'),
@@ -327,7 +327,7 @@ window.addEventListener('load', ()=>{
     
     Modules.forEach(module=>{
         const div = moduleTemplate.content.cloneNode(true)
-        let contributors, examples = "";
+        let contributors, examples, name = "";
         contributors = "Made by ";
         module.contributors.forEach(contributor=>{
             if (contributor.role) {
@@ -345,8 +345,25 @@ window.addEventListener('load', ()=>{
         module.examples.forEach(example=>{
             examples +=`<img class="skeleton" src="${example}" alt="an example of the ${module.name} module." width="300px" height="200px">`
         })
+        function getName(raw) {
+            let name = ""
+            for (let i = 0; i < raw.length; i++) {
+                let letter = raw.substring(i, i+1)
+                if (i == 0) letter = letter.toUpperCase()
+                else {
+                    for (let i2 = 0; i2 < (90 - 65); i2++) {
+                        if (raw.substring(i, i+1) == String.fromCharCode(i2+65)) {
+                            letter = ` ${raw.substring(i, i+1)}`
+                        }
+                    }
+                }
+                name += letter;
+            }
+            return name
+        }
+
         div.querySelector('.moduleListItem').id = module.name;
-        div.querySelector('[data-name]').textContent = module.name;
+        div.querySelector('[data-name]').textContent = getName(module.name);
         div.querySelector('[data-desc]').textContent = module.description;
         div.querySelector('[data-ver]').textContent = `v${module.version}, last updated on ${new Date(module.lastUpdated).toLocaleString()}`;
         div.querySelector('[data-devs]').textContent = contributors;
