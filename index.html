@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<!--
+    Lmao if you see this, and this doesn't work; it's because I was working on it last month, and then randomly worked on a different project, and I just came back and I have no idea what I was supposed to fix, so here, have a buggy website.
+    If it actually doesn't work:
+    /* Disorder.CSS */
+    @import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/main.css');
+    /* Better User Panel: NewlineVoid */
+    @import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/modules/betterUserPanel.css');
+    /* Extras: NewlineVoid */
+    @import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/modules/extras.css')
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -322,6 +332,22 @@ function getTime(dateString) {
 for (let i = 0; i < 10; i++) {
     moduleList.append(moduleTemplate.content.cloneNode(true))
 }
+function getName(raw) {
+    let name = ""
+    for (let i = 0; i < raw.length; i++) {
+        let letter = raw.substring(i, i+1)
+        if (i == 0) letter = letter.toUpperCase()
+        else {
+            for (let i2 = 0; i2 < (90 - 65); i2++) {
+                if (raw.substring(i, i+1) == String.fromCharCode(i2+65)) {
+                    letter = ` ${raw.substring(i, i+1)}`
+                }
+            }
+        }
+        name += letter;
+    }
+    return name
+}
 window.addEventListener('load', ()=>{
     moduleList.innerHTML="";
     
@@ -345,22 +371,6 @@ window.addEventListener('load', ()=>{
         module.examples.forEach(example=>{
             examples +=`<img class="skeleton" src="${example}" alt="an example of the ${module.name} module." width="300px" height="200px">`
         })
-        function getName(raw) {
-            let name = ""
-            for (let i = 0; i < raw.length; i++) {
-                let letter = raw.substring(i, i+1)
-                if (i == 0) letter = letter.toUpperCase()
-                else {
-                    for (let i2 = 0; i2 < (90 - 65); i2++) {
-                        if (raw.substring(i, i+1) == String.fromCharCode(i2+65)) {
-                            letter = ` ${raw.substring(i, i+1)}`
-                        }
-                    }
-                }
-                name += letter;
-            }
-            return name
-        }
 
         div.querySelector('.moduleListItem').id = module.name;
         div.querySelector('[data-name]').textContent = getName(module.name);
@@ -432,7 +442,7 @@ function generateCSSSnippet() {
                 throw new Error(`Module '${module}' error: An error occurred while retrieving contributors.`);
             });
             contributors = contributors.substring(0, (contributors.length - 2));
-            snippet += `\n/* ${module}: ${contributors} */\n@import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/modules/${module}.css');`;
+            snippet += `\n/* ${getName(module)}: ${contributors} */\n@import url('https://raw.githubusercontent.com/NewlineVoid/Disorder/main/modules/${module}.css');`;
         }
     });
     return snippet;
